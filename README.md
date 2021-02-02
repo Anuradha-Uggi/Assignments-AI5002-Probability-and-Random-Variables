@@ -1,1 +1,1 @@
-# Uggi-Anuradha-Assignment-AI5002-Probability-and-Random-Variables
+# Assignment-AI5002-Probability-and-Random-Variables
