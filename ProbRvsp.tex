@@ -1,0 +1,101 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{longtable}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{pgfplots}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{hhline}
+\lstset{
+%language=C,
+frame=single,
+breaklines=true,
+columns=fullflexible
+}
+
+\title{Probability\&RV \\ Assignment-02}
+\author{U Anuradha-ee21resch01008}
+\date{\today}
+
+\begin{document}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\textbf{download Python code from}
+\begin{lstlisting}
+ https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass02/PmfRvsp.py
+\end{lstlisting}
+\textbf{download Latex code from}
+\begin{lstlisting}
+https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass02/ProbRvsp.tex
+\end{lstlisting}
+\section{QUESTION(1.12)}
+A coin is biased so that the head is 3 times as likely to occur as tail.if the coin is tossed twice,find the probability distribution of number of tails. \\
+\section{SOLUTION}
+Given that the coin is biased.when coin is tossed once then
+Probability of occurrence of Head is = 3 times the occurrence of tail i.e
+\begin{equation}
+    P(H)=3 P(T)
+\end{equation}
+
+when the coin is tossed twice then the possible outcomes are   $HH,HT,TH,TT$.\\
+as the coin is biased 
+\begin{equation*}
+    P(H)=\frac{3}{4} 
+\end{equation*}
+\begin{equation*}
+    P(T)=\frac{1}{4}
+\end{equation*}
+$X=0$ represents no tails i.e both are heads\\
+$X=1$ represents 1 tail and other is head\\
+$X=2$ represents 2 tails and no heads\\
+
+Let X represents number of Tails and P(X) represents the distribution of  X which can be expressed as\\ \\
+\begin{tabular}{|c|c|c|c|}
+\hline
+   $X$  & 0 & 1 & 2 \\
+\hline
+  P(X) & $\frac{3}{4}\times \frac{3}{4}$ &$\frac{3}{4}\times \frac{1}{4}$ & $ \frac{1}{4}\times \frac{1}{4}$ \\
+  \hline
+\end{tabular}\\
+\newline
+\section{CONCLUSION}
+Probability Distribution of Number of Tails is obtained as below.\\
+\begin{figure}[ht]
+   % \centering
+    \includegraphics[width=0.5 \textwidth]{rvspt2.png}
+    
+\end{figure} \\
+\begin{figure}[ht]
+   % \centering
+    \includegraphics[width=0.5 \textwidth]{rvsptt.png}
+    
+\end{figure}
+
+
+
+\end{document}
