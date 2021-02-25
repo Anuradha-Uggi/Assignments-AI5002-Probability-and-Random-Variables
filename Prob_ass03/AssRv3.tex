@@ -45,6 +45,10 @@ columns=fullflexible
 \bigskip
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
+\textbf{download Python code from}
+\begin{lstlisting}
+ https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass03/Rvsp_3.py
+\end{lstlisting}
 \textbf{Download Latex code from}
 \begin{lstlisting}
 https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass03/AssRv3.tex
@@ -54,29 +58,29 @@ Two groups are competing for the position on the board of directors of a corpora
 \section{SOLUTION}
 Let $P(g_1)$ is the winning probability of 1st group.\\
     $P(g_2)$ is the winning probability of 2nd group.\\
-    $P(n_1\mid g_1)$ is the probability that the 1st group introduces a new product.\\
-    $P(n_2\mid g_2)$ is the probability that the 2nd group introduces a new product.\\
+    $P(n\mid g_1)$ is the probability that the 1st group introduces a new product.\\
+    $P(n\mid g_2)$ is the probability that the 2nd group introduces a new product.\\
     \\given in the Question\\ \\
     $P(g_1)=0.6$\\
      $P(g_2)=0.4$\\
-     $P(n_1\mid g_1)=0.7$\\
-     $P(n_2\mid g_2)=0.3$.\\ \\
+     $P(n\mid g_1)=0.7$\\
+     $P(n\mid g_2)=0.3$.\\ \\
      From Bays Theorem \\
      Probability that the new Product introduced was by Group2 is Expressed as
 \begin{equation*}
-   P(g_2\mid n_2)=\frac{P(n_2\mid g_2)\times P(g_2)}{{P(n_2\mid g_2)\times P(g_2)}+{P(n_1\mid g_1)\times P(g_1)}}
+   P(g_2\mid n)=\frac{P(n\mid g_2)\times P(g_2)}{{P(n\mid g_2)\times P(g_2)}+{P(n\mid g_1)\times P(g_1)}}
 \end{equation*}
 Substituting Given all Values in above Equation gives
 \begin{equation*}
-    P(g_2\mid n_2)=\frac{0.3\times 0.4}{{0.3\times 0.4}+{0.7\times 0.6}}
+    P(g_2\mid n)=\frac{0.3\times 0.4}{{0.3\times 0.4}+{0.7\times 0.6}}
 \end{equation*}
 \begin{equation*}
-    P(g_2\mid n_2)=\frac{2}{9}=0.222222222.
+    P(g_2\mid n)=\frac{2}{9}=0.222222222.
 \end{equation*}
 \section{CONCLUSION}
 Probability that the new Product was actually Launched by second group is 
 \begin{equation*}
-   P(g_2\mid n_2)=\frac{2}{9}
+   P(g_2\mid n)=\frac{2}{9}
 \end{equation*}
 
 
