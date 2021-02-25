@@ -59,14 +59,17 @@ Two groups are competing for the position on the board of directors of a corpora
 Let $P(g_1)$ is the winning probability of 1st group.\\
     $P(g_2)$ is the winning probability of 2nd group.\\
     $P(n\mid g_1)$ is the probability that the 1st group introduces a new product.\\
-    $P(n\mid g_2)$ is the probability that the 2nd group introduces a new product.\\
-    \\given in the Question\\ \\
-    $P(g_1)=0.6$\\
-     $P(g_2)=0.4$\\
-     $P(n\mid g_1)=0.7$\\
-     $P(n\mid g_2)=0.3$.\\ \\
-     From Bays Theorem \\
-     Probability that the new Product introduced was by Group2 is Expressed as
+    $P(n\mid g_2)$ is the probability that the 2nd group introduces a new product.\\ \\
+    where X indicates possible event and P(X) indicates corresponding Probability\\ \\
+ \begin{tabular}{|c|c|c|c|c|}
+\hline
+   $X$  & g1 & g2 & n\mid g_1 & n\mid g_2 \\
+\hline
+  P(X) & 0.6 & 0.4 & 0.7 & 0.3 \\
+\hline
+\end{tabular}\\ \\
+From Bays Theorem \\
+Probability that the new Product introduced was by Group2 is Expressed as
 \begin{equation*}
    P(g_2\mid n)=\frac{P(n\mid g_2)\times P(g_2)}{{P(n\mid g_2)\times P(g_2)}+{P(n\mid g_1)\times P(g_1)}}
 \end{equation*}
