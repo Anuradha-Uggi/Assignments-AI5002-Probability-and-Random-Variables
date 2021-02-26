@@ -60,13 +60,23 @@ Let $P(g_1)$ is the winning probability of 1st group.\\
     $P(g_2)$ is the winning probability of 2nd group.\\
     $P(n\mid g_1)$ is the probability that the 1st group introduces a new product.\\
     $P(n\mid g_2)$ is the probability that the 2nd group introduces a new product.\\ \\
-    where X indicates possible event and P(X) indicates corresponding Probability\\ \\
- \begin{tabular}{|c|c|c|c|c|}
+    let  $X_1$ is the random variable indicates the winning possibilities of groups.\\ 
+    $X_2$ is the random variable indicates event of product being introduced.\\
+    $X_1$=0: group 1 wins\\
+    $X_1$=1: group 2 wins\\
+    $X_2$=0: group 1 introduces the product\\
+    $X_2$=1: group 2 introduces the product\\
+    
+ \begin{tabular}{|c|c|c|}
 \hline
-   $X$  & g1 & g2 & n\mid g_1 & n\mid g_2 \\
+   $X_1$  & 0 & 1  \\
 \hline
-  P(X) & 0.6 & 0.4 & 0.7 & 0.3 \\
+ $ P(X_1) $& 0.6 & 0.4 \\
 \hline
+  $X_2$ & 0 & 1 \\
+\hline 
+  $ P(X_2)$ & 0.7 & 0.3 \\
+\hline 
 \end{tabular}\\ \\
 From Bays Theorem \\
 Probability that the new Product introduced was by Group2 is Expressed as
