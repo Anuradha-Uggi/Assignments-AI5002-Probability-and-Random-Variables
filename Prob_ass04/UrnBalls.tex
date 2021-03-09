@@ -1,0 +1,89 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{longtable}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{pgfplots}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{hhline}
+\lstset{
+%language=C,
+frame=single,
+breaklines=true,
+columns=fullflexible
+}
+
+\title{Probability\&RV \\ Assignment-03}
+\author{U Anuradha-ee21resch01008}
+\date{\today}
+
+\begin{document}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\textbf{download Python code from}
+\begin{lstlisting}
+ https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass04/rvsp_urn_balls.py
+\end{lstlisting}
+\textbf{Download Latex code from}
+\begin{lstlisting}
+https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass04/UrnBalls.tex
+\end{lstlisting}
+\section{QUESTION(Prob-3,8)}
+Six balls are drawn successively from an
+urn containing 7 red and 9 black balls. Tell
+whether or not the trials of drawing balls are
+Bernoulli trials when after each draw the ball
+drawn is\\
+(i) replaced\\
+(ii) not replaced in the urn.
+\section{SOLUTION}
+Properties to be satisfied if a trial needs to be a bernoulli trial:
+1.Number of trials should be finite\\
+2.each trial should have utcomes of success and failure\\
+3.if P is the success probability then failure probability should be 1-P.\\
+4.probability of success should not vary in all trials.\\ \\
+case(i):Replaced\\ \\
+Number of red balls = 7\\
+Number of black balls = 9\\
+let X be the random variable that indicates probability of success and failure.\\ \\
+let P(x=1) is the probability of success lets take it as picking a red ball.\\\\
+and P(x=0) is the probability of failure lets take it as picking a black ball.\\\\
+$P(x=1) = \frac{7}{16} $ and its same for any red ball drawn since the drawn ball is replaced. \\
+$P(x=0) = \frac{9}{16} = 1-P(x=1)$ \\so it satisfies all properties of Bernoulli therefore Trials under Replaced case are Bernoulli Trials.\\ \\
+case(ii):Not Replaced\\ \\
+$P(x=1) =\frac{7}{16}$ and for 2nd trial $P(x=1) = \frac{6}{15} $ similarly\\ $P(x=0) = \frac{9}{16}$ and for 2nd trial $P(x=0) = \frac{8}{15} $ so here the probability of success and corresponding failure is varying in each trial therefore under Not Replaced case Trials are not Bernoulli Trials. 
+\section{CONCLUSION}
+Case(i):Drawn balls are Replaced into the Urn\\ \\
+Trials are Bernoulli Trials \\ \\
+Case(ii):Drawn balls are not Replaced \\ \\
+Trials are not Bernoulli Trials.
+
+
+
+
+\end{document}
