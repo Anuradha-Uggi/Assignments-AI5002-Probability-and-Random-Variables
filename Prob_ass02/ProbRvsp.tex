@@ -82,18 +82,34 @@ Let X represents number of Tails and P(X) represents the distribution of  X whic
   \hline
 \end{tabular}\\
 \newline
+let 
+\begin{equation*}
+    P(y=0)=P=\frac{3}{4}
+\end{equation*}
+\begin{equation*}
+     P(y=1)=1-P=\frac{1}{4}
+\end{equation*}
+   
+Generalization over such coin toss event for outcome of Number of Tails in this case can be achieved using Binomial Distribution as
+\begin{equation*}
+    P_x= \binom{n}{x} P^x (1-P)^{n-x}
+\end{equation*}
+where x is a random variable that defines Number of possible Tails in the event.and it can take values from 0 to n.
 \section{CONCLUSION}
-Probability Distribution of Number of Tails is obtained as below.\\
+
+Probability Distribution of Number of Tails is obtained as below.
+\newline
+\newpage
 \begin{figure}[ht]
    % \centering
     \includegraphics[width=0.4 \textwidth]{rvspt2.png}
-    
-\end{figure} \\
+ \end{figure} 
 \begin{figure}[ht]
    % \centering
     \includegraphics[width=0.4 \textwidth]{rvsptt.png}
     
 \end{figure}
+
 
 
 
