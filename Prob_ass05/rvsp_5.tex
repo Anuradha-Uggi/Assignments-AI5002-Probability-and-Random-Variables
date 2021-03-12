@@ -1,0 +1,137 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{longtable}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{pgfplots}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{hhline}
+\lstset{
+%language=C,
+frame=single,
+breaklines=true,
+columns=fullflexible
+}
+
+\title{Probability\&RV \\ Assignment-03}
+\author{U Anuradha-ee21resch01008}
+\date{\today}
+
+\begin{document}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\textbf{download Python code from}
+\begin{lstlisting}
+ https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass05/rvsp_ass_5.py
+\end{lstlisting}
+\textbf{Download Latex code from}
+\begin{lstlisting}
+https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass05/rvsp_5.tex
+\end{lstlisting}
+\section{\textbf{QUESTION}}
+A bag consists of 10 balls each marked with one of the digits 0 to 9. If four balls are drawn successively with replacement from the bag,
+what is the probability that none is marked with the digit 0?
+\section{\textbf{SOLUTION}}
+\textbf{Problem  Description:}\\ \\
+(i) An Urn consists 10 Balls each marked with any of the digits from 0 to 9.\\
+(ii) After every Draw the Ball is replaced in the Urn.\\
+(iii) 4 Balls needs to be Drawn from the Urn by replacing Balls after every Draw.\\
+(iv) All Balls Drawn should be marked with non-zero digits.\\ \\
+\textbf{Computation:}\\ \\
+Now we should Compute Probability of Drawing 4 Balls from the Urn marked with non-zero digits with Replacement.\\
+Here we Define Two Random Variables X and Y. X Describes whether the Ball Drawn is marked with zero or non-zero digit.and Y Describes the number of balls marked non-zero digit Drawn from the Urn.\\
+where
+\begin{equation*}
+    P(X=0) 
+\end{equation*}
+is the Probability of Drawing a ball.and
+\begin{equation*}
+    P(X=1)
+\end{equation*}
+is the Probability that Ball Drawn is marked with non-zero digit.\\
+we know that
+\begin{equation*}
+    P(X=0)=\frac{1}{10}
+\end{equation*}
+where Sample space consists all 10 possibilities and among  them the Favourable Outcome is Drawing any ball.similarly
+\begin{equation*}
+    P(X=1)=1-P(X=0)=\frac{9}{10}
+\end{equation*}
+where we have Digits from 0 to 9.one ball among 10 is generally marked with 0.so now Sample Space remains same but Number of Favourable Outcomes will change to any digit except zero.therefore it becomes 9.so 9 over 10.\\  \\
+since balls drawn are replaced,probability of success or failure remains same in all Trials.and the Trial is Associated with two outcomes either success or failure.so the Random Variable X is a Bernoulli Random Variable.where 
+\begin{equation*}
+    P(X=1) = \frac{9}{10}
+\end{equation*}
+is the success Probability.and
+\begin{equation*}
+    P(X=0)=1-P(X=1)=\frac{1}{10}
+\end{equation*}
+is the failure probability.\\
+Now final Probability can be obtained as below.\\ 
+random variable Y can take values \\
+Y=0\\Y=1\\Y=2\\Y=3\\Y=4.\\
+let
+\begin{equation*}
+    q=P(X=1)
+\end{equation*}
+\begin{equation*}
+    1-q=P(X=0)
+\end{equation*}
+then
+\begin{equation*}
+    P(Y=0)=\binom{4}{0}(1-q)^4
+\end{equation*}
+\begin{equation*}
+    P(Y=1)=\binom{4}{1}(q)(1-q)^3 
+\end{equation*}
+\begin{equation*}
+    P(Y=2)=\binom{4}{2}(q)^2(1-q)^2
+\end{equation*}
+\begin{equation*}
+    P(Y=3)=\binom{4}{3}(q)^3(1-q)^1
+\end{equation*}
+\begin{equation*}
+    P(Y=4)=\binom{4}{4}(q)^4
+\end{equation*}
+Now we can state our Final Computed Probability that 4 balls are drawn and none of them is marked with zero-digit is 
+\begin{equation*}
+    P(Y=4)=\left(\frac{9}{10}\right)^4
+\end{equation*}
+\textbf{Generalization}\\
+Above task can be Generalized using Binomial Distribution as
+\begin{equation*}
+    P_Y=\binom{n}{Y}(q)^Y(1-q)^{n-Y}
+\end{equation*}
+where n=4.\\
+if n=1000 then $q=\frac{999}{1000}$.
+\section{\textbf{CONCLUSION}}
+the probability that among 4 balls Drawn  none is marked with the digit 0 is
+\begin{equation*}
+    P(Y=4)=\left(\frac{9}{10}\right)^4
+\end{equation*}
+\end{document}
