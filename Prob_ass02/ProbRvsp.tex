@@ -53,27 +53,35 @@ columns=fullflexible
 \begin{lstlisting}
 https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass02/ProbRvsp.tex
 \end{lstlisting}
-\section{QUESTION(1.12)}
+\section{QUESTION}
 A coin is biased so that the head is 3 times as likely to occur as tail.if the coin is tossed twice,find the probability distribution of number of tails. \\
 \section{SOLUTION}
-Given that the coin is biased.when coin is tossed once then
-Probability of occurrence of Head is = 3 times the occurrence of tail.Lets assume that the possible outcomes of a coin toss are random in nature and its represented by a random variable $y$.where \\
-$y=0$ is the outcome of occurrence of Head and $y=1$ is the outcome of occurrence of Tail.then
+Given 
+\begin{itemize}
+    \item Probability of occurrence of Head is = 3 times the occurrence of tail.
+    \item Let Y is a random variable takes values 0 and 1.
+    \item $Y=0$ is the outcome of occurrence of Head.
+    \item $Y=1$ is the outcome of occurrence of Tail.
+\end{itemize}
+then
 \begin{equation}
-    P(y=0)=3 P(y=1)
+    P(Y=0)=3 P(Y=1)
 \end{equation}
 when the coin is tossed twice then the possible outcomes are   $00,01,10,11$.\\
 as the coin is biased 
-\begin{equation*}
-    P(y=0)=\frac{3}{4} 
-\end{equation*}
-\begin{equation*}
-    P(y=1)=\frac{1}{4}
-\end{equation*}
-$X=0$ represents no tails i.e both are heads\\
-$X=1$ represents 1 tail and other is head\\
-$X=2$ represents 2 tails and no heads\\
-Let X represents number of Tails and P(X) represents the distribution of  X which can be expressed as\\ \\
+\begin{equation}
+    P(Y=0)=\frac{3}{4} 
+\end{equation}
+\begin{equation}
+    P(Y=1)=\frac{1}{4}
+\end{equation}
+\begin{itemize}
+    \item $X=0$ represents no tails i.e both are heads.
+    \item $X=1$ represents 1 tail and other is head.
+    \item $X=2$ represents 2 tails and no heads.
+    
+\end{itemize}
+where X represents number of Tails and P(X) represents the distribution of  X.\\ \\
 \begin{tabular}{|c|c|c|c|}
 \hline
    $X$  & 0 & 1 & 2 \\
@@ -83,22 +91,21 @@ Let X represents number of Tails and P(X) represents the distribution of  X whic
 \end{tabular}\\
 \newline
 let 
-\begin{equation*}
-    P(y=0)=P=\frac{3}{4}
-\end{equation*}
-\begin{equation*}
-     P(y=1)=1-P=\frac{1}{4}
-\end{equation*}
+\begin{equation}
+    P(Y=0)=q=\frac{3}{4}
+\end{equation}
+\begin{equation}
+     P(Y=1)=1-q=\frac{1}{4}
+\end{equation}
    
-Generalization over such coin toss event for outcome of Number of Tails in this case can be achieved using Binomial Distribution as
-\begin{equation*}
-    P_x= \binom{n}{x} P^x (1-P)^{n-x}
-\end{equation*}
-where x is a random variable that defines Number of possible Tails in the event.and it can take values from 0 to n.
+Generalization over such coin toss event  can be obtained using Binomial Distribution as
+\begin{equation}
+    P(X=k)= \binom{n}{k} q^k (1-q)^{n-k}
+\end{equation}
+where k is a discrete variable can take values from 0 to n.
 \section{CONCLUSION}
 
 Probability Distribution of Number of Tails is obtained as below.
-\newline
 \newpage
 \begin{figure}[ht]
    % \centering
