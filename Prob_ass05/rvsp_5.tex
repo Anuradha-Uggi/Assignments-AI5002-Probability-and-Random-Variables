@@ -45,7 +45,7 @@ columns=fullflexible
 \bigskip
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
-\textbf{download Python code from}
+\textbf{Download Python code from}
 \begin{lstlisting}
  https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass05/rvsp_ass_5.py
 \end{lstlisting}
@@ -84,7 +84,6 @@ similarly
 \end{equation}
 One ball among 10 is generally marked with 0.so now Sample Space remains same but Number of Favourable Outcomes becomes 9.\\  \\
 Since Trials are  Bernoulli Trials Hence the Random Variable X.
-random variable Y can take values from 0 to 4.
 let
 \begin{equation}
     q=P(X=1)
@@ -92,25 +91,24 @@ let
 \begin{equation}
     1-q=P(X=0)
 \end{equation}
-then
-\begin{itemize}
-    \item $P(Y=0)=\binom{4}{0}(1-q)^4$ \\
-    \item $P(Y=1)=\binom{4}{1}(q)(1-q)^3$ \\
-    \item $P(Y=2)=\binom{4}{2}(q)^2(1-q)^2 $ \\
-    \item $P(Y=3)=\binom{4}{3}(q)^3(1-q)^1$ \\
-    \item $P(Y=4)=\binom{4}{4}(q)^4 $ \\
-\end{itemize}
- Probability that 4 balls are drawn and none of them is marked with zero-digit is 
+then from equation 2 and 3 
+\begin{equation}
+    q=\frac{9}{10}
+\end{equation}
+Probability that 4 balls are drawn and none of them is marked with zero-digit is 
 \begin{equation}
     P(Y=4)=\left(\frac{9}{10}\right)^4
 \end{equation}
 \textbf{Generalization}\\
 Above task can be Generalized using Binomial Distribution as
 \begin{equation}
-    P_Y=\binom{n}{Y}(q)^Y(1-q)^{n-Y}
+    P(Y=k)=\binom{n}{k}(q)^k(1-q)^{n-k}
 \end{equation}
-where n=4.\\
-if n=1000 then $q=\frac{999}{1000}$.
+\begin{itemize}
+    \item where n=4
+    \item k is a  discrete variable and can take values from 0 to n
+    \item for n=1000,$q=\frac{999}{1000}$
+\end{itemize}
 \section{\textbf{CONCLUSION}}
 the probability that among 4 balls Drawn  none is marked with the digit 0 is
 \begin{equation}
