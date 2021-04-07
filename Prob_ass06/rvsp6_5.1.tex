@@ -1,0 +1,98 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{longtable}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{pgfplots}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{hhline}
+\lstset{
+%language=C,
+frame=single,
+breaklines=true,
+columns=fullflexible
+}
+
+\title{Probability\&RV \\ Assignment-06}
+\author{Anuradha U-ee21resch01008}
+\date{\today}
+
+\begin{document}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\textbf{download Python code from}
+\begin{lstlisting}
+https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass06/rvsp6_51.py
+\end{lstlisting}
+\textbf{download Latex code from}
+\begin{lstlisting}
+https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass06/rvsp6_5.1.tex
+\end{lstlisting}
+\section{\textbf{QUESTION(PROB,5.1)}}
+It is given that in a group of 3 students, the probability of 2 students not having the same birthday is 0.992.What is the probability that 2 students have the same birthday?
+
+\section{\textbf{SOLUTION}}
+Let X is a random variable indicates number of people sharing their birthday and Y is a random variable indicates X people sharing or not sharing their birthdays.\\ \\
+\textbf{Given Data:} \\
+Probability of 2 people not sharing the Birthday is
+\begin{equation}
+    P(Y=0/X=2)=0.992
+\end{equation}
+from the Axioms of Probability we can say that
+\begin{equation}
+    P(Y=0/X)+P(Y=1/X)=1
+\end{equation}
+from above equation (2)\\
+Probability that 2 students among 3 have same birthday is 
+\begin{equation}
+    P(Y=1/X=2)=1-P(Y=0/X=2)
+\end{equation}
+\begin{equation}
+    P(Y=1/X=2)=1-0.992=0.008
+\end{equation}
+\\
+\textbf{Generalization:}\\
+\begin{itemize}
+    \item Let us consider non leap years having 365 days/year. 
+    \item Then Probability that k among n people share birthday is given by
+\end{itemize}
+
+\begin{equation}
+    P(Y=1/X=k)= \frac{\binom{n}{k}\times \binom{365}{n+1-k}\times (n+1-k)!}{365^n}
+\end{equation}
+\\
+\textbf{Conclusion:}\\
+Probability that 2 among 3 people having same birthday is 0.008.
+
+
+
+
+
+
+
+\end{document}
