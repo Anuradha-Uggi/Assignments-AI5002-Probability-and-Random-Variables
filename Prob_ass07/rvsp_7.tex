@@ -1,0 +1,117 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{longtable}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{pgfplots}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{hhline}
+\lstset{
+%language=C,
+frame=single,
+breaklines=true,
+columns=fullflexible
+}
+
+\title{Probability\&RV \\ Assignment-07}
+\author{Anuradha U-ee21resch01008}
+\date{\today}
+
+\begin{document}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\renewcommand{\theenumi}{\Alph{enumi}}
+
+\textbf{Download Latex code from}
+\begin{lstlisting}
+https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass07/rvsp_7.tex
+\end{lstlisting}
+\section{\textbf{QUESTION(PROB,6.4)}}
+If P(A/B) $>$ P(A), then which of the following
+is correct : 
+
+\begin{enumerate}
+    \item P(A$\cap$ B) $<$ P(A)P(B)
+    \item P(B/A) $<$ P(B)
+    \item P(B/A) $>$ P(B)
+    \item P(B/A)= P(B)
+\end{enumerate}
+
+\section{\textbf{SOLUTION}}
+Given
+\begin{equation}
+    P(A/B)>P(A)
+\end{equation}
+
+by expanding conditional probability
+\begin{equation}
+    P(A/B)=\frac{P(A\cap B)}{P(B)}
+\end{equation}
+by rewriting the Given condition
+\begin{equation}
+    P(A\cap B)>P(A)P(B)
+\end{equation}
+\textbf{Options Verification:}\\ \\
+\textbf{
+   A) P(A$\cap$ B)$<$P(A)P(B):
+    }\\ 
+from equation (3) the given option (A) is false.\\ \\
+\textbf{B) P(B/A) $<$ P(B): }\\
+from equation (2) option (B) can be expanded as
+\begin{equation}
+    P(B/A)=\frac{P(B\cap A}{B}
+\end{equation}
+\begin{equation}
+    P(A\cap B)=P(B\cap A)
+\end{equation}
+Now by rewriting Option (B)\\
+\begin{equation}
+    P(B\cap A) < P(A)P(B)
+\end{equation}
+from equation (3) above option is false.\\ \\
+\textbf{C) P(B/A) $>$ P(B): }\\
+by rewriting it \\
+\begin{equation}
+    P(B\cap A)>P(A)P(B)
+\end{equation}
+which is True from equation (3)\\ \\
+\textbf{D) P(B/A)= P(B): }\\
+by rewriting \\
+\begin{equation}
+    P(B\cap A)=P(A)P(B)
+\end{equation}
+which is false as per the given condition.
+
+\section{\textbf{CONCLUSION}}
+By verifying all given options,Option (C) preserves the given condition in equation (1)
+
+
+
+
+
+\end{document}
