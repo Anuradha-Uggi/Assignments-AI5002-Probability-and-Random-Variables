@@ -52,7 +52,7 @@ columns=fullflexible
 https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass08/rvsp_8.tex
 \end{lstlisting}
 \section{\textbf{QUESTION(UGC NET 2019,Q-108)}}
-Suppose X=X$_1$,X$_2$,....,X$_n$ are i.i.d \\ Uniform  ($\theta$,2$\theta$),
+Suppose $X_i$=X$_1$,X$_2$,....,X$_n$ are i.i.d \\ Uniform  ($\theta$,2$\theta$),
  $\theta>$ 0. Let X$_{(1)}$=min\{X$_1$,$X_2$,...,X$_n$\} and 
 X$_{(n)}$=max\{X$_1$,....,X$_n$\}.then which of the following statements are correct.\\
 \begin{enumerate}
@@ -86,14 +86,14 @@ for all $\theta$.\\
 Given
 
 \begin{equation}
-      X_{(1)} =min\{X_1,X_2,....,X_n\}
+      X_{(1)} =min\{X_1,X_2,....,X_n\}=min\{X_i\}
 \end{equation}
 \begin{equation}
-    X_{(n)}=max\{X_1,X_2,....,X_n\}
+    X_{(n)}=max\{X_1,X_2,....,X_n\}=max\{X_i\}
 \end{equation}
 
 \begin{equation}
-    X=\{X_1,X_2,....,X_n\}\sim U(\theta,2\theta)
+    X_i=\{X_1,X_2,....,X_n\}\sim U(\theta,2\theta)
 \end{equation}
 \begin{equation}
     P(X_i)=\dfrac{1}{\theta}
@@ -108,7 +108,7 @@ X are i.i.d so Likelihood is given by
 \end{equation}
 equation (7) can be split into
 \begin{equation}
-    f_X(x)=\frac{1}{\theta^n}1_{\{\theta\leq min\{X\}}1_{max\{ X\}\leq2\theta}
+    f_X(x)=\frac{1}{\theta^n}1_{\{\theta\leq min\{X_i\}}1_{max\{ X_i\}\leq2\theta}
 \end{equation}
 from equation (8) 
 \begin{equation}
@@ -119,31 +119,31 @@ from equation (8)
     S_{(\theta,2\theta)}(X)=\frac{1}{\theta^n}
 \end{equation}
  which is function of only $\theta$.\\
-therefore $T(min\{X\},max\{X\})$ is jointly sufficient to define $\theta$ thus Sufficient statistic.\\ \\
+therefore $T(min\{X_i\},max\{X_i\})$ is jointly sufficient to define $\theta$ thus Sufficient statistic.\\ \\
 Let 
 \begin{equation}
-     g(T)=max\{X\}-max\{X\}
+     g(T)=max\{X_i\}-max\{X_i\}
 \end{equation}
 \begin{equation}
-    E[g(T)]=E[max\{X\}-min\{X\}]=\int (max\{X\}-min\{X\})\frac{1}{\theta^n}dx
+    E[g(T)]=E[max\{X_i\}-min\{X_i\}]=\int (max\{X_i\}-min\{X_i\})\frac{1}{\theta^n}dx
 \end{equation}
 from equation (12) its clear that
 \begin{equation}
-    max\{X\}-min\{X\}\neq0
+    max\{X_i\}-min\{X_i\}\neq0
 \end{equation}
 for all $\theta$ therefore 
 \begin{equation}
-    P(\ max\{X\}-min\{X\}=0 )\ \neq1
+    P(\ max\{X_i\}-min\{X_i\}=0 )\ \neq1
 \end{equation}
 therefore $T(X_{(n)},X_{(1)})$ is Jointly sufficient but not complete for $\theta$. \\ \\
 \textbf{Maximum Likelihood Estimate(MLE) :}\\ \\
 Likelihood can be written as 
 \begin{equation}
-    f_\theta(X_1,X_2,..,X_n)=\frac{1}{\theta^n}I\left( \frac{max     \{X\}}{2}\leq\theta\leq min\{X\}\right)
+    f_\theta(X_1,X_2,..,X_n)=\frac{1}{\theta^n}I\left( \frac{max     \{X_i\}}{2}\leq\theta\leq min\{X_i\}\right)
 \end{equation}
 the MLE is the statistic that maximizes the liklihood.from equation (7) liklihood is a decreasing function of $\theta$.therefore MLE of $\theta$ is 
 \begin{equation}
-    \theta=\frac{X_{(n)}}{2}=\frac{max\{X\}}{2}
+    \theta=\frac{X_{(n)}}{2}=\frac{max\{X_i\}}{2}
 \end{equation}
 \section{\textbf{CONCLUTION}}
 From above observations option (2) and option (3) holds.
