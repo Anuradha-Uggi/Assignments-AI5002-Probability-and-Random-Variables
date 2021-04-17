@@ -84,6 +84,14 @@ for all $\theta$ then
 for all $\theta$.\\
 \section{\textbf{SOLUTION}}
 Given
+
+\begin{equation}
+      X_{(1)} =min\{X_1,X_2,....,X_n\}
+\end{equation}
+\begin{equation}
+    X_{(n)}=max\{X_1,X_2,....,X_n\}
+\end{equation}
+
 \begin{equation}
     X=\{X_1,X_2,....,X_n\}\sim U(\theta,2\theta)
 \end{equation}
@@ -92,7 +100,7 @@ Given
 \end{equation}
 Statistic
 \begin{equation}
-    T(X)=(X_{(1)},X_{(n)})
+    T(X)=(min\{X\},max\{X\})
 \end{equation}
 X are i.i.d so Likelihood is given by 
 \begin{equation}
@@ -100,7 +108,7 @@ X are i.i.d so Likelihood is given by
 \end{equation}
 equation (7) can be split into
 \begin{equation}
-    f_X(x)=\frac{1}{\theta^n}1_{\{\theta\leq X_{(1)}\}}1_{\{ X_{(n)}\leq2\theta\}}
+    f_X(x)=\frac{1}{\theta^n}1_{\{\theta\leq min\{X\}}1_{max\{ X\}\leq2\theta}
 \end{equation}
 from equation (8) 
 \begin{equation}
@@ -111,31 +119,31 @@ from equation (8)
     S_{(\theta,2\theta)}(X)=\frac{1}{\theta^n}
 \end{equation}
  which is function of only $\theta$.\\
-therefore $T(X_{(1)},X_{(2)})$ is jointly sufficient to define $\theta$ thus Sufficient statistic.\\ \\
+therefore $T(min\{X\},max\{X\})$ is jointly sufficient to define $\theta$ thus Sufficient statistic.\\ \\
 Let 
 \begin{equation}
-     g(T)=X_n-X_1
+     g(T)=max\{X\}-max\{X\}
 \end{equation}
 \begin{equation}
-    E(g(T))=E(X_{(n)}-X_{(1)})=\int (X_{(n)}-X_{(n)})\frac{1}{\theta^n}dx
+    E[g(T)]=E[max\{X\}-min\{X\}]=\int (max\{X\}-min\{X\})\frac{1}{\theta^n}dx
 \end{equation}
 from equation (12) its clear that
 \begin{equation}
-    X_{(n)}-X_{(1)}\neq0
+    max\{X\}-min\{X\}\neq0
 \end{equation}
 for all $\theta$ therefore 
 \begin{equation}
-    P(\ X_{(n)}-X_{(1)}=0 )\ \neq1
+    P(\ max\{X\}-min\{X\}=0 )\ \neq1
 \end{equation}
 therefore $T(X_{(n)},X_{(1)})$ is Jointly sufficient but not complete for $\theta$. \\ \\
 \textbf{Maximum Likelihood Estimate(MLE) :}\\ \\
 Likelihood can be written as 
 \begin{equation}
-    f_\theta(x_1,x_2,..,x_n)=\frac{1}{\theta^n}I(\frac{max     X_i}{2}\leq\theta\leq min X_i)
+    f_\theta(X_1,X_2,..,X_n)=\frac{1}{\theta^n}I\left( \frac{max     \{X\}}{2}\leq\theta\leq min\{X\}\right)
 \end{equation}
 the MLE is the statistic that maximizes the liklihood.from equation (7) liklihood is a decreasing function of $\theta$.therefore MLE of $\theta$ is 
 \begin{equation}
-    \theta=\frac{X_{(n)}}{2}
+    \theta=\frac{X_{(n)}}{2}=\frac{max\{X\}}{2}
 \end{equation}
 \section{\textbf{CONCLUTION}}
 From above observations option (2) and option (3) holds.
