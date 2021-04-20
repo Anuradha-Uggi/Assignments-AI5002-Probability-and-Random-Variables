@@ -1,0 +1,116 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{longtable}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{pgfplots}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{hhline}
+\lstset{
+%language=C,
+frame=single,
+breaklines=true,
+columns=fullflexible
+}
+
+\title{Probability\&RV \\ Assignment-08}
+\author{Anuradha U-ee21resch01008}
+\date{\today}
+
+\begin{document}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+
+\textbf{Download Latex code from}
+\begin{lstlisting}
+https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass08/rvsp_8.tex
+\end{lstlisting}
+\textbf{Download Python code from}
+\begin{lstlisting}
+https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass08/rvsp_8.py
+\end{lstlisting}
+\section{\textbf{QUESTION(GATE-Q17)}}
+The input X to the binary Symmetric Channel(BSC) shown in fig.1 is '1' with probability 0.8. The cross-over probability is $\frac{1}{7}$. if the received bit Y=0,the conditional probability that '1' was transmitted is......
+
+\section{\textbf{SOLUTION}}
+Given 
+\begin{equation}
+    P(Y=0/X=0)=P(Y=1/X=1)= \frac{6}{7}
+\end{equation}
+\begin{equation}
+   P(Y=0/X=1)=P(Y=1/X=0)=\frac{1}{7}
+\end{equation}
+we know that
+\begin{equation}
+    P(X\cap Y)=P(Y\cap X) 
+\end{equation}
+Above equation can also be written as
+\begin{equation}
+    P(X/Y)P(Y)=P(Y/X)P(X)
+\end{equation}
+
+Therefore
+\begin{equation}
+    P(X=1/Y=0)=\frac{P(Y=0/X=1)P(X=1)}{P(Y=0)}
+\end{equation}
+From the given data
+\begin{equation}
+    P(Y=0)=P(Y=0/X=0)P(X=0)+P(Y=0/X=1)P(X=1)
+\end{equation}
+\begin{equation}
+   P(Y=0)= \frac{6}{7}\times 0.2+\frac{1}{7}\times 0.8=\frac{2}{7}
+\end{equation}
+we have
+\begin{enumerate}
+    \item $P(Y=0/X=1)=\frac{1}{7}$
+    \item $P(X=1)=0.8$
+    \item $P(Y=0)=\frac{2}{7}$
+\end{enumerate}
+Substituting above values in equation (5) results
+
+\begin{equation}
+       P(X=1/Y=0)=\frac{0.8}{2}=0.4
+\end{equation}
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.5\textwidth]{rvsp8.png}
+\end{figure}
+
+\section{\textbf{CONCLUSION}}
+probability that X=1 is transmitted given that Y=0 is received is
+\begin{equation}
+    P(X=1/Y=0)=0.4
+\end{equation}
+
+
+
+
+
+\end{document}
