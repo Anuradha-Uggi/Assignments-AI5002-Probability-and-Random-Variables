@@ -1,0 +1,184 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{longtable}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{pgfplots}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{hhline}
+\lstset{
+%language=C,
+frame=single,
+breaklines=true,
+columns=fullflexible
+}
+
+\title{Probability\&RV \\ Assignment-09}
+\author{Anuradha U-ee21resch01008}
+\date{\today}
+
+\begin{document}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+
+\textbf{Download Latex code from}
+\begin{lstlisting}
+https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass09/rvsp_9.tex
+\end{lstlisting}
+\section{\textbf{QUESTION(UGC NET 2019,Q-108)}}
+
+Suppose $X_i$=X$_1$,X$_2$,....,X$_n$ are i.i.d \\ Uniform ($\theta$,2$\theta$),$\theta>$ 0. Let X$_{(1)}$=min\{X$_1$,$X_2$,...,X$_n$\} and 
+X$_{(n)}$=max\{X$_1$,....,X$_n$\}.then which of the following statements are correct.\\
+
+\begin{enumerate}
+    \item (\ X$_{(1)}$,X$_{(n)}$)\ is jointly sufficient and complete for $\theta$
+    \item (\ X$_{(1)}$,X$_{(n)}$)\ is jointly sufficient but not complete for
+    $\theta$
+    \item $\frac{X_{(n)}}{2}$ is maximum likelihood estimate for $\theta$
+    \item X$_{(1)}$ is maximum likelihood estimate for $\theta$
+    
+\end{enumerate}
+\section{\textbf{Basic Definitions}}
+\textbf{Sufficient Statistic:}\\
+
+Given X i.i.d Data conditioned on an unknown parameter $\theta$, T(X) is called sufficient statistic for $\theta$ if its values contains all the information needed to compute any estimate of the parameter (Maximum likelihood estimate). according to Fisher$-$Neymen Factorization PDF is \\
+
+\begin{equation}
+    f(X;\theta)=h(X)S(\theta,T(X))
+\end{equation}
+
+where h(X) is a constant and S($\theta$,T(X)) is a function through which $\theta$ will interact to X only through T(X).\\ \\
+\textbf{Statistic Completeness:}\\ \\
+T(X) is said to be complete for $\theta$ if for every measurable function g;
+if 
+\begin{equation}
+    {E_\theta}(g(T))=0 
+\end{equation}
+for all $\theta$ then
+\begin{equation}
+    P_\theta(g(T)=0)=1 
+\end{equation}
+for all $\theta$.\\
+\section{\textbf{SOLUTION}}
+Given
+
+\begin{equation}
+      X_{(1)} =min\{X_1,X_2,....,X_n\}=min\{X_i\}
+\end{equation}
+
+\begin{equation}
+    X_{(n)}=max\{X_1,X_2,....,X_n\}=max\{X_i\}
+\end{equation}
+
+\begin{equation}
+    X_i=\{X_1,X_2,....,X_n\}\sim U(\theta,2\theta)
+\end{equation}
+
+\begin{equation}
+    P(X_i)=\dfrac{1}{\theta}
+\end{equation}
+Statistic
+
+\begin{equation}
+    T(X)=(min\{X\},max\{X\})
+\end{equation}
+
+X are i.i.d so Likelihood is given by 
+\begin{equation}
+    f_X(x)=\frac{1}{\theta^n}1_{\{\theta\leq X_i \leq2\theta\}}
+\end{equation}
+
+equation (7) can be split into
+
+\begin{equation}
+    f_X(x)=\frac{1}{\theta^n}1_{\{\theta\leq min\{X_i\}}1_{max\{ X_i\}\leq2\theta}
+\end{equation}
+from equation (8) 
+
+\begin{equation}
+    h(X)=1
+\end{equation}
+ which is constant and
+ 
+\begin{equation}
+    S_{(\theta,2\theta)}(X)=\frac{1}{\theta^n}
+\end{equation}
+
+ which is function of only $\theta$.\\
+therefore $T(min\{X_i\},max\{X_i\})$ is jointly sufficient to define $\theta$ thus Sufficient statistic.\\ \\
+Let 
+
+\begin{equation}
+     g(T)=max\{X_i\}-max\{X_i\}
+\end{equation}
+
+\begin{equation}
+    E[g(T)]=E[max\{X_i\}-min\{X_i\}]=\int (max\{X_i\}-min\{X_i\})\frac{1}{\theta^n}dx
+\end{equation}
+
+from equation (12) its clear that
+\begin{equation}
+    max\{X_i\}-min\{X_i\}\neq0
+\end{equation}
+
+for all $\theta$ therefore 
+\begin{equation}
+    P(\ max\{X_i\}-min\{X_i\}=0 )\ \neq1
+\end{equation}
+
+therefore $T(X_{(n)},X_{(1)})$ is Jointly sufficient but not complete for $\theta$. \\ \\
+\textbf{Maximum Likelihood Estimate(MLE) :}\\ \\
+Likelihood can be written as 
+
+\begin{equation}
+    f_\theta(X_1,X_2,..,X_n)=\frac{1}{\theta^n}I\left( \frac{max     \{X_i\}}{2}\leq\theta\leq min\{X_i\}\right)
+\end{equation}
+
+the MLE is the statistic that maximizes the liklihood.from equation (7) liklihood is a decreasing function of $\theta$.therefore MLE of $\theta$ is 
+
+\begin{equation}
+    \theta=\frac{X_{(n)}}{2}=\frac{max\{X_i\}}{2}
+\end{equation}
+
+\section{\textbf{CONCLUTION}}
+From above observations option (2) and option (3) holds.
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
