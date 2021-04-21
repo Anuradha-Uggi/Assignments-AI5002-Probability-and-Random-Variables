@@ -55,8 +55,10 @@ https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Varia
 \begin{lstlisting}
 https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass10/rvsp_10.py
 \end{lstlisting}
+
 \section{\textbf{QUESTION(GATE-Q18)}}
 A fair coin is tossed till a head appears for the first time.the probability that the number of required tosses is odd,is..
+
 \begin{enumerate}
     \item $\frac{1}{3}$\\
     \item $\frac{1}{2}$\\
@@ -67,17 +69,18 @@ A fair coin is tossed till a head appears for the first time.the probability tha
 \section{\textbf{SOLUTION}}
 Let X be the random variable represents odd number of tosses to get first Head.\\
 possibilities are\\ \\
+
 \begin{tabular}{|c|c|c|c|c}
-  \hline
-    X & 1 & 3 & 5 & 7 ...\\
-  \hline
-    P(X) & $\frac{1}{2}$ & $(\frac{1}{2})^3$ & $(\frac{1}{2})^5$ & $(\frac{1}{2})^7...$ \\
-  \hline
+    \hline
+      X & 1 & 3 & 5 & 7 ...\\
+    \hline
+      \Pr[X] & $\frac{1}{2}$ & $(\frac{1}{2})^3$ & $(\frac{1}{2})^5$ & $(\frac{1}{2})^7...$ \\
+    \hline
 \end{tabular}\\
 
 probability of odd tosses for first head can be computed as
 \begin{equation}
-    P(X)=\frac{1}{2}+(\frac{1}{2})^3+(\frac{1}{2})^5+(\frac{1}{2})^7+....
+    \Pr[X]=\frac{1}{2}+(\frac{1}{2})^3+(\frac{1}{2})^5+(\frac{1}{2})^7+....
 \end{equation}
 we can observe that above series is a Geometric Series so the sum of infinite terms in Geometric Series can be computed as
 \begin{equation}
@@ -85,17 +88,17 @@ we can observe that above series is a Geometric Series so the sum of infinite te
 \end{equation}
 from equation (2)
 \begin{equation}
-     P(X)=\frac{0.5}{1-0.5^2}=\frac{2}{3}
+    \Pr[X]=\frac{0.5}{1-0.5^2}=\frac{2}{3}
 \end{equation}
 similarly for even number of tosses getting first head can be computed as below 
 \begin{equation}
     X=2,4,6,....
 \end{equation}
 \begin{equation}
-    P(X)=(\frac{1}{2})^2+(\frac{1}{2})^4+(\frac{1}{2})^6....
+    \Pr[X]=(\frac{1}{2})^2+(\frac{1}{2})^4+(\frac{1}{2})^6....
 \end{equation}
 \begin{equation}
-    P(X)=\frac{0.5^2}{1-0.5^2}=\frac{1}{3}
+    \Pr[X]=\frac{0.5^2}{1-0.5^2}=\frac{1}{3}
 \end{equation}
 
 \section{\textbf{CONCLUSION}}
