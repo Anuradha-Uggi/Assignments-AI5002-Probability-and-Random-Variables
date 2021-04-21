@@ -1,0 +1,104 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{longtable}
+\usepackage{amsthm}
+\usepackage{graphics}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{pgfplots}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{hhline}
+\lstset{
+%language=C,
+frame=single,
+breaklines=true,
+columns=fullflexible
+}
+
+\title{Probability\&RV \\ Assignment-10}
+\author{Anuradha U-ee21resch01008}
+\date{\today}
+
+\begin{document}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+
+\textbf{Download Latex code from}
+\begin{lstlisting}
+https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass10/rvsp_10.tex
+\end{lstlisting}
+\textbf{Download Python code from}
+\begin{lstlisting}
+https://github.com/Anuradha-Uggi/Assignments-AI5002-Probability-and-Random-Variables/blob/main/Prob_ass10/rvsp_10.py
+\end{lstlisting}
+\section{\textbf{QUESTION(GATE-Q18)}}
+A fair coin is tossed till a head appears for the first time.the probability that the number of required tosses is odd,is..
+\begin{enumerate}
+    \item $\frac{1}{3}$\\
+    \item $\frac{1}{2}$\\
+    \item $\frac{2}{3}$\\
+    \item $\frac{3}{4}$
+\end{enumerate}
+
+\section{\textbf{SOLUTION}}
+Let X be the random variable represents odd number of tosses to get first Head.\\
+possibilities are\\ \\
+\begin{tabular}{|c|c|c|c|c}
+  \hline
+    X & 1 & 3 & 5 & 7 ...\\
+  \hline
+    P(X) & $\frac{1}{2}$ & $(\frac{1}{2})^3$ & $(\frac{1}{2})^5$ & $(\frac{1}{2})^7...$ \\
+  \hline
+\end{tabular}\\
+
+probability of odd tosses for first head can be computed as
+\begin{equation}
+    P(X)=\frac{1}{2}+(\frac{1}{2})^3+(\frac{1}{2})^5+(\frac{1}{2})^7+....
+\end{equation}
+we can observe that above series is a Geometric Series so the sum of infinite terms in Geometric Series can be computed as
+\begin{equation}
+    Sum=\frac{FirstTerm}{1-Common Ratio}
+\end{equation}
+from equation (2)
+\begin{equation}
+     P(X)=\frac{0.5}{1-0.5^2}=\frac{2}{3}
+\end{equation}
+similarly for even number of tosses getting first head can be computed as below 
+\begin{equation}
+    X=2,4,6,....
+\end{equation}
+\begin{equation}
+    P(X)=(\frac{1}{2})^2+(\frac{1}{2})^4+(\frac{1}{2})^6....
+\end{equation}
+\begin{equation}
+    P(X)=\frac{0.5^2}{1-0.5^2}=\frac{1}{3}
+\end{equation}
+
+\section{\textbf{CONCLUSION}}
+        Correct Option is : 3
+\end{document}
+
