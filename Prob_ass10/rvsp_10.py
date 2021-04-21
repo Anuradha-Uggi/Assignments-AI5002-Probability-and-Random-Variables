@@ -68,4 +68,3 @@ plt.stem(y,cdf,'g')
 plt.xlabel('z')
 plt.ylabel('cdf')
 
-import numpy as np
