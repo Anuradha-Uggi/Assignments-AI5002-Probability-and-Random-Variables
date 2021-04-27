@@ -1,0 +1,220 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+\documentclass[aspectratio=169,xcolor=dvipsnames]{beamer}
+\usetheme{General}
+
+\usepackage{hyperref}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[short title]{Sufficient Statistics} % The short title appears at the bottom of every slide, the full title is only on the title page
+\subtitle{}
+
+\author[Pin-Yen] {Anuradha Uggi}
+
+\institute[NTU] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+    Department of Electrical Engineering \\
+    Indian Institute of Technology Hyderabad % Your institution for the title page
+}
+\date{April 23,2021} % Date, can be changed to a custom date
+
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{frame}
+  % Print the title page as the first slide
+  \titlepage
+\end{frame}
+
+\begin{frame}{Contents}
+  % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------
+\section{Sufficient Statistic and Fisher Fcatorization}
+%------------------------------------------------
+
+\begin{frame}{Sufficient Statistic and Fisher Fcatorization}
+  \begin{itemize}
+    \item Sufficient Statistic holds information needed to compute unknown. 
+    \item Distribution of $X$ conditioned on $\theta$,Statistic can be any $T(X)$.
+    \item Sufficiency is stated mathematically by Fisher factorization theorem.
+    \item $f_X(x)=h(x)g(\theta,T(x))$
+    \item $h(x)$ is any constant and $g(\theta,T(x))$ tells $\theta$ interact to $X$ only through $T(X)$.
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\section{Examples}
+%------------------------------------------------
+\begin{frame}{Bernoulli Distribution}
+  \begin{itemize}
+      \item Let $X=\{X_1,X_2,..,X_n\}$ be i.i.d $Bernoulli(p)$.
+      \item Let $T(X)=X_1+X_2+..+X_n$ which is sum of $1's$.
+      \item $\Pr{(X=x)}=\Pr{\{X_1=x_1,X_2=x_2,...,X_n=x_n\}}$
+      \item above can be written as
+      \item $p^{x_1}(1-p)^{1-x_1}p^{x_2}..p^{x_n}(1-p)^{1-x_n}$
+      \item $p^{\sum x_i}(1-p)^{n-\sum x_i}=p^{T(X)}(1-p)^{n-T(X)}$
+      \item $h(x)=1$ and $g(p,T(x))=p^{T(X)}(1-p)^{n-T(X)}$
+      
+      \item $T(X)$ is alone enough to find $p$
+  \end{itemize} 
+  
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Uniform Distribution}
+  \begin{itemize}
+      \item Let $X=\{X_1,X_2,..,X_n\}$ be i.i.d and Uniformly Distributed over $(0,\theta)$.
+      \item $T(X)=\max (X_1,X_2,...,X_n)$
+      \item $f_X(x_1,x_2,..,x_n)$=$\frac{1}{\theta}1_{\{0\leq x_1 \leq\theta\}}...\frac{1}{\theta}1_{\{0\leq x_n \leq\theta\}}$
+      \item $f_X(x_1,x_2,..,x_n)$=$\frac{1}{\theta^n}1_{\{0\leq \min{x_i}\}}1_{\{\max{x_i}\leq\theta\}}$
+      \item $h(x)=1_{\{0\leq \min{x_i}\}}$ remaining part is $g(x,T(x))$
+      \item Therefore $T(X)$ is sufficient to find $\theta$.
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Poisson Distribution}
+  \begin{itemize}
+      \item Let $X={X_1,X_2,..,X_n}$ be i.i.d Poisson($\lambda$)
+      \item $T(X)=X_1+X_2+..+X_n$ for $\lambda$
+      \item $\Pr{(X=x)}$=$\Pr{(X_1=x_1,X_2=x_2,..,X_n=x_n)}$.
+      \item $\Pr{(X=x)}$=$\frac{e^{-\lambda}\lambda^{x_1}}{x_1!}$$\frac{e^{-\lambda}\lambda^{x_2}}{x_2!}$..$\frac{e^{-\lambda}\lambda^{x_n}}{x_n!}$.
+      \item $e^{-n\lambda}\lambda^{(x_1+x_2+..x_n)}\frac{1}{x_1!x_2!..x_n!}$
+      \item $h(x)=\frac{1}{x_1!x_2!..x_n!}$
+      \item $g(x,T(x))$=$e^{-n\lambda}\lambda^{T(X)}$
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\section{Question}
+%------------------------------------------------
+
+\begin{frame}{Question}
+  \begin{itemize}
+      \item Suppose $X_i=X_1,X_2,....,X_n$ are i.i.d \\ Uniform $(\theta,2\theta),\theta> 0$. Let X$_{(1)}$=$\min\{X_1,X_2,...,X_n\}$ and 
+      X$_{(n)}$=$\max\{X_1,....,X_n\}$.then which of the following statements are correct.
+ 
+      \begin{enumerate}
+          \item (\ X$_{(1)}$,X$_{(n)}$)\ is jointly sufficient and complete for $\theta$
+          \item (\ X$_{(1)}$,X$_{(n)}$)\ is jointly sufficient but not complete for
+          $\theta$
+          \item $\frac{X_{(n)}}{2}$ is maximum likelihood estimate for $\theta$
+          \item X$_{(1)}$ is maximum likelihood estimate for $\theta$
+    
+      \end{enumerate}
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\section{Solution}
+%--------------------------------------------------
+
+\begin{frame}{Solution}
+  \begin{itemize}
+      \item $T(X)=\{X_{(1)},X_{(n)})\}$.
+      \item $f_X(x)=\frac{1}{\theta^n}1_{\{\theta\leq X_{(1)}\}}1_{\{ X_{(n)}\leq2\theta\}}$.
+      \item $h(x)=1$.
+      \item $g(x,T(x)=\frac{1}{\theta^n}1_{\{\theta\leq X_{(1)}\}}1_{\{ X_{(n)}\leq2\theta\}}$.
+      \item $T(X)$ is sufficient to find $\theta$.
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\section{Indication Function}
+%------------------------------------------------
+
+\begin{frame}{$1_{\{\theta\leq X_{(1)}\}}1_{\{ X_{(n)}\leq2\theta\}}$}
+   \begin{itemize}
+       \item Let $x_1,x_2,...,x_n$ are random samples from random variables $X_1,X_2,..X_n$.
+   \end{itemize}
+   \begin{equation*}
+     1_{\{\theta\leq x\leq 2\theta\}:}=
+    \begin{cases}
+       1 & \text{if $\theta\leq x\leq 2\theta $} \\
+       0 & \text{otherwise}
+    \end{cases}
+   \end{equation*} 
+   \begin{itemize}
+       \item Above equation implies that every random sample lies in the defined range.
+       \item It can be generalized by taking max and min among all sampled values.
+       \item i.e $\max\{X\}\leq 2\theta$ always and
+       \item $\theta\leq\min\{X\}$ always
+   \end{itemize}
+    
+\end{frame}
+%------------------------------------------------
+\section{Completeness}
+%------------------------------------------------
+
+\begin{frame}{Complete Statistic}
+  \begin{itemize}
+      \item T(X) is said to be complete for $\theta$ if for every measurable function g,
+      \item if ${E_\theta}(g(T))=0 $ for all $\theta$ then
+      \item $ P_\theta(g(T)=0)=1 $ for all $\theta$.
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Complete Statistic}
+  \begin{itemize}
+      \item Let $g(T)=X_{(1)}-X_{(n)}$
+      \item $E[g(T)$]=$E[X_{(1)}-X_{(n)}]=c$ for all $\theta$
+      \item $E[X_{(1)}-X_{(n)}-c]=0$ for all $\theta$
+      \item $\int (X_{(1)}-X_{(n)}-c)\frac{1}{\theta^n}dx=0$
+      \item We can say that $X_{(1)}-X_{(n)}-c=0$ for all $\theta$
+      \item Therefore $T(X)$ is Sufficient and Complete for   $\theta$ 
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------
+\section{Maximum Likelihood Estimation(MLE)}
+%------------------------------------------------------
+
+\begin{frame}{MLE of $\theta$}
+  \begin{itemize}
+      \item Estimate of $\theta$ which Maximizes Likelihood i.e $f_X(x)$.
+      \item $f_X(x)=\frac{1}{\theta^n}$ where $\theta$ and $f_X(x)$ are inversely related.so Minimum value of $\theta$ maximizes the Likelihood.
+      \item and we also know that $\theta\leq X_{(1)}$ and $X_{(n)}\leq2\theta$
+      \item i.e $\frac{X_{(n)}}{2}\leq \theta \leq X_{(1)}$
+      \item Therefore MLE of $\theta$=$\frac{X_{(n)}}{2}$
+      
+  \end{itemize}
+\end{frame}
+%-----------------------------------------------------------
+\section{References}
+%-----------------------------------------------------------
+
+\begin{frame}{References}
+   \begin{itemize}
+       \item https://en.wikipedia.org/wiki/Sufficient$\_$statistic
+       \item https://en.wikipedia.org/wiki/Completeness$\_$(statistics)
+   \end{itemize}
+
+
+\end{frame}
+
+\begingroup
+\setbeamertemplate{footline}{} % remove footline
+\begin{frame}
+  \Huge{\centerline{Thank you}}
+\end{frame}
+\endgroup
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
