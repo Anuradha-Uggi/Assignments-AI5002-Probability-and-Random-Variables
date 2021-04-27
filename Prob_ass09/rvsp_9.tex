@@ -71,7 +71,7 @@ X$_{(n)}$=$\max\{X_1,....,X_n\}$.then which of the following statements are corr
 Given X i.i.d Data conditioned on an unknown parameter $\theta$, T(X) is called sufficient statistic for $\theta$ if its values contains all the information needed to compute any estimate of the parameter (Maximum likelihood estimate). according to Fisher$-$Neymen Factorization PDF is \\
 
 \begin{equation}
-        f(X;\theta)=h(X)S(\theta,T(X))
+    f(X;\theta)=h(X)S(\theta,T(X))
 \end{equation}
 
 where h(X) is a constant and S($\theta$,T(X)) is a function through which $\theta$ will interact to X only through T(X).\\ \\
@@ -81,12 +81,12 @@ T(X) is said to be complete for $\theta$ if for every measurable function g;
 
 if 
 \begin{equation}
-        {E_\theta}(g(T))=0 
+    {E_\theta}(g(T))=0 
 \end{equation}
 
 for all $\theta$ then
 \begin{equation}
-        P_\theta(g(T)=0)=1 
+    P_\theta(g(T)=0)=1 
 \end{equation}
 
 for all $\theta$.\\
@@ -94,85 +94,110 @@ for all $\theta$.\\
 Given
 
 \begin{equation}
-        X_{(1)} =\min\{X_1,X_2,....,X_n\}=\min\{X_i\}
+    X_{(1)} =\min\{X_1,X_2,....,X_n\}=\min\{X_i\}
 \end{equation}
 
 \begin{equation}
-        X_{(n)}=\max\{X_1,X_2,....,X_n\}=\max\{X_i\}
+    X_{(n)}=\max\{X_1,X_2,....,X_n\}=\max\{X_i\}
 \end{equation}
 
 \begin{equation}
-        X_i=\{X_1,X_2,....,X_n\}\sim U(\theta,2\theta)
+    X_i=\{X_1,X_2,....,X_n\}\sim U(\theta,2\theta)
 \end{equation}
 
 \begin{equation}
-        P(X_i)=\dfrac{1}{\theta}
+    P(X_i)=\dfrac{1}{\theta}
 \end{equation}
 Statistic
 
 \begin{equation}
-        T(X)=(\min\{X\},\max\{X\})
+    T(X)=(\min\{X\},\max\{X\})
 \end{equation}
 
-X are i.i.d so Likelihood is given by 
+X are i.i.d so Likelihood or joint PDF is simple product of all marginal PDFs given by 
+
 \begin{equation}
-        f_X(x)=\frac{1}{\theta^n}1_{\{\theta\leq X_i \leq2\theta\}}
+    f_X(x)=\frac{1}{\theta^n}1_{\{\theta\leq x_1\leq 2\theta\}}1_{\{\theta\leq x_2 \leq2\theta\}}...1_{\{\theta\leq x_n \leq2\theta\}}
+\end{equation}
+\textbf{Indicator Function$(\boldsymbol{1_{\{\theta\leq X_i\leq 2\theta\}})}$:}\\
+let we have 
+\begin{align}
+    A\subset X
+\end{align}
+Indicator Function (or) Characteristic Function in Mathematics Indicates membership of elements in set X,having value 1 for elements of X in A and 0 for those of X not in A.its denoted by Symbol $1$ or $I$ with a subscript.
+\begin{equation}
+    1_{(A)}:X\to \{0,1\}
+\end{equation}
+\begin{equation}
+    1_{(A(x)):}=
+    \begin{cases}
+       1 & \text{if $x \in A$} \\
+       0 & \text{if $x\notin A$}
+    \end{cases}
+\end{equation}
+we know that all random samples from Random Variables $X_1,X_2,...X_n$ lies in the range $(\theta,2\theta)$ with a probability 
+\begin{equation}
+    \Pr{(X=x)}=\frac{1}{\theta}1_{\{\theta\leq x\leq 2\theta\}}
 \end{equation}
 
-equation (7) can be split into
+Now the joint PDF can be expressed as
 
 \begin{equation}
-        f_X(x)=\frac{1}{\theta^n}1_{\{\theta\leq \min\{X_i\}}1_{\max\{ X_i\}\leq2\theta}
+    f_X(x)=\frac{1}{\theta^n}1_{\{\theta\leq \min\{X_i\}}1_{\max\{ X_i\}\leq2\theta}
 \end{equation}
-from equation (8) 
 
+above equation implies that all samples $x_1,x_2,..x_n$ fall in $\theta$ and 2$\theta$.from above equation 
 \begin{equation}
-        h(X)=1
+    h(X)=1
 \end{equation}
  which is constant and
  
 \begin{equation}
-        S_{(\theta,2\theta)}(X)=\frac{1}{\theta^n}
+    S_{(\theta,2\theta)}(X)=\frac{1}{\theta^n}
 \end{equation}
-
- which is function of only $\theta$.\\
+which is function of only $\theta$.\\
 therefore $T(\min\{X_i\},\max\{X_i\})$ is jointly sufficient to define $\theta$ thus Sufficient statistic.\\ \\
 Let 
 
 \begin{equation}
-        g(T)=\max\{X_i\}-\max\{X_i\}
+     g(T)=\max\{X_i\}-\min\{X_i\}
+\end{equation}
+\begin{equation}
+     E[g(T)]=E[\max\{X_i\}-\min\{X_i\}]=c
+\end{equation}
+\begin{equation}
+    E[\max\{X_i\}-\min\{X_i\}-c]=0
+\end{equation}
+\begin{equation}
+    E[g(T)-c]=\int(\max\{X_i\}-\min\{X_i\}-c)\frac{1}{\theta^n}dx
 \end{equation}
 
+from equation (20) its clear that
 \begin{equation}
-        E[g(T)]=E[\max\{X_i\}-\min\{X_i\}]=\int (\max\{X_i\}-\min\{X_i\})\frac{1}{\theta^n}dx
-\end{equation}
-
-from equation (12) its clear that
-\begin{equation}
-        \max\{X_i\}-\min\{X_i\}\neq0
+    \max\{X_i\}-\min\{X_i\}-c=0
 \end{equation}
 
 for all $\theta$ therefore 
 \begin{equation}
-        P(\ \max\{X_i\}-\min\{X_i\}=0 )\ \neq1
+    P(\max\{X_i\}-\min\{X_i\}-c=0)=1 
 \end{equation}
-
-therefore $T(X_{(n)},X_{(1)})$ is Jointly sufficient but not complete for $\theta$. \\ \\
+for all $\theta$
+therefore $T(X_{(n)},X_{(1)})$ is Jointly sufficient and complete for $\theta$. \\ \\
 \textbf{Maximum Likelihood Estimate(MLE) :}\\ \\
 Likelihood can be written as 
 
 \begin{equation}
-        f_\theta(X_1,X_2,..,X_n)=\frac{1}{\theta^n}I\left( \frac{\max     \{X_i\}}{2}\leq\theta\leq \min\{X_i\}\right)
+    f_\theta(X_1,X_2,..,X_n)=\frac{1}{\theta^n}I\left( \frac{\max     \{X_i\}}{2}\leq\theta\leq \min\{X_i\}\right)
 \end{equation}
 
 the MLE is the statistic that maximizes the liklihood.from equation (7) liklihood is a decreasing function of $\theta$.therefore MLE of $\theta$ is 
 
 \begin{equation}
-        \theta=\frac{X_{(n)}}{2}=\frac{\max\{X_i\}}{2}
+    \theta=\frac{X_{(n)}}{2}=\frac{\max\{X_i\}}{2}
 \end{equation}
 
 \section{\textbf{CONCLUTION}}
-From above observations option (2) and option (3) holds.
+From above observations option (1) and option (3) holds.
 
 
 
