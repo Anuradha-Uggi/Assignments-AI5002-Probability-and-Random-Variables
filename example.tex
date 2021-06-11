@@ -1,0 +1,502 @@
+% UTF-8 encoding
+\documentclass[9pt, dvipsnames]{beamer} %
+% Beamer 设置
+\usetheme[secheader]{Boadilla} % 使用的 Beamer 主题： Boadilla
+\usecolortheme{beaver} % 使用的 Beamer 颜色：beaver
+% 字体设置
+\usefonttheme{professionalfonts} % professional 字体
+% 其他 Package
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage{anyfontsize}
+\usepackage{subcaption} % 子图片
+\usepackage{graphicx} % 图片
+\usepackage[export]{adjustbox}
+\setbeamertemplate{caption}[numbered]
+\newcounter{saveenumi}
+\resetcounteronoverlays{saveenumi}
+\usepackage[multidot]{grffile} % 允许文件名带多个点
+\usepackage{tabularx} % 表格
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{textpos}
+\usepackage{float}
+\usepackage{wrapfig}
+%%%%%%%%%%%%%%%%%%%
+% 使用背景
+\logo{\includegraphics[height=0.5cm]{iith.png}\hspace{12pt}\vspace {6pt}}
+
+\pgfdeclareimage[height=\paperheight,width=\paperwidth]{bgimage}{vlc3.png}
+\usebackgroundtemplate{\tikz\node[opacity=0.1,inner sep=0]{\pgfuseimage{bgimage}};}
+%%%%%%%%%%%%%%%%%%%
+%\usepackage{ctex} % xelatex 中文
+\title{Study on VLC Channel Model Based on Poisson Stochastic Network Theory} % 标题
+
+\author[Anuradha Uggi]{Hao Wu \inst{1} \and Qunjhen Fan\inst{2}}
+%{\includegraphics[height=2cm,width=2cm]{iith.png}\\Anuradha Uggi\\ ee21resch01008}% 作者
+\institute[IITH]{Presentation\\By\\Name:Anuradha Uggi\\I'd:EE21RESCH01008\\Course:AI5002\\Supervisor:Prof.GVV\\Indian Institute of Technology Hyderabad}
+
+\date{\today} % 如果 Date 参数为空，自动显示当前日期
+\begin{document}
+
+    \everymath{\displaystyle}
+
+    % 标题页
+    \begin{frame}
+        \titlepage % 根据上面信息生成标题
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{\textbf{Index}}
+        \tableofcontents % 生成目录（如果为空，请编译两次）
+    \end{frame}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{VLC?}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   
+    \begin{frame}{\textbf {VLC?}}
+      %  \frametitle{\textbf{VLC?}}
+           \begin{columns}
+          
+             \column{0.4\textwidth}
+             \begin{itemize}
+              \item Message signals die out over longer distances 
+              \item Requirement of Carriers
+              \item Modem to Place message on a Carrier
+            \end{itemize}
+          \column{0.5\textwidth}
+           \includegraphics[width=6.5cm,height=6cm,right]{vlc1.jpg}
+           \captionof{figure}{\footnotesize Source:Internet}
+          \end{columns}
+   \end{frame}
+   
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \section{Block Diagram of VLC Architecture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   
+    \begin{frame}{\textbf{Block Diagram of VLC Architecture}}
+          
+         \includegraphics[width=12.5cm,height=4cm,right]{blockD.jpeg}
+         \captionof{figure}{\footnotesize Source:Conference Paper[2]}
+        
+    \end{frame}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Transmitter}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \begin{frame}{\textbf {Transmitter}}
+      %  \frametitle{\textbf{VLC?}}
+           \begin{columns}
+          
+             \column{0.4\textwidth}
+             \begin{itemize}
+              \item LD  and LED dual-functional
+              \item Plank's Theory:$E_g=hf$
+              \item Modulation
+            \end{itemize}
+          \column{0.5\textwidth}
+           \includegraphics[width=7cm,height=6cm,right]{LED.png}
+           \captionof{figure}{\footnotesize Source:Internet}
+          \end{columns}
+   \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Receiver}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}{\textbf {Receiver}}
+      %  \frametitle{\textbf{VLC?}}
+           \begin{columns}
+          
+             \column{0.4\textwidth}
+             \begin{itemize}
+              \item Light2Electric Signal Conversion by Photo-detector 
+              \item $R=\frac{e\times\eta}{h\times\nu}$ : Ratio of output current to Input Optical Power.
+              
+            \end{itemize}
+          \column{0.5\textwidth}
+           \includegraphics[width=6.5cm,height=6cm,right]{pinphotodiode.png}
+           \captionof{figure}{\footnotesize Source:Internet}
+          \end{columns}
+   \end{frame}
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Channel} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+  \begin{frame}{\textbf {Channel}}
+      %  \frametitle{\textbf{VLC?}}
+           \begin{columns}
+          
+             \column{0.4\textwidth}
+             \begin{itemize}
+              \item Multi-Path Reflections 
+              \item $\lambda_{VL}<\lambda_{RW} $
+              \item VL interference
+             \end{itemize}
+          \column{0.5\textwidth}
+           \includegraphics[width=7cm,height=6cm,right]{getImage.jpg}
+           \captionof{figure}{\footnotesize Source:Internet}
+          \end{columns}
+   \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Types of Channel}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  
+  \begin{frame}{\textbf {Types of Channel}}
+      %  \frametitle{\textbf{VLC?}}
+           \begin{columns}
+          
+             \column{0.4\textwidth}
+             \begin{itemize}
+              \item LoS and NLoS 
+              \item Directed,Non-Directed and Hybrid Channels
+             \end{itemize}
+          \column{0.5\textwidth}
+           \includegraphics[width=7cm,height=6cm,right]{channels.jpeg}
+           \captionof{figure}{\footnotesize Source:Conference Paper[1]}
+          \end{columns}
+   \end{frame}
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Statistical Model of VL Channel}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+   \begin{frame}{\textbf {Study of Channel}}
+             \begin{itemize}
+              \item Appropriate Rxd power level is desired in any communication System
+              \item Interference may deteriorate Rxd power
+              \item Increasing Txd power, Optimizing the LED Layout and decreasing FOV of Rx are remedies
+              \item Study of Channel is needed to Compute Rxd power
+              \item To study the Channel random distribution of RPs is needed
+              \item Finding the best Layout of LED is the Motto of this paper
+             
+             \end{itemize}
+   \end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Poisson Stochastic Network Theory Model(PSNTM)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{frame}{\textbf {Homogeneous Poisson Point Process}}
+             \begin{itemize}
+              \item Several RPs in space obey Poisson Distribution,so that the Network can be modelled as Poisson Stochastic Process 
+              \item Due to several properties HPPP can well approximate the actual reflection environment\\ 
+              \textbf{Poisson Distribution:}
+              \begin{equation}
+                  P(X=x)=\frac{e^{-\lambda}\lambda^{x}}{x!}
+              \end{equation}
+              \textbf{Poisson Point Process:}
+              \begin{equation}
+                  P(\phi(A) )=n)=\frac{e^{\lambda|A|}\lambda|A|^{n}}{n!}
+              \end{equation}
+             \end{itemize}
+   \end{frame}
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Homogeneous Poisson Point Process}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+   \begin{frame}{\textbf {Properties of HPPP}}
+      %  \frametitle{\textbf{VLC?}}
+           \begin{columns}
+          
+             \column{0.4\textwidth}
+             \begin{itemize}
+              \item If points in Space forms PP
+              \item Subset of points is a rv with a Poisson Distribution
+              \item Complete Independence
+              \item Number of points in set A is a Poisson Rv with Parameter $\lambda |A|$
+             \end{itemize}
+          \column{0.5\textwidth}
+           \includegraphics[width=6.5cm,height=6cm,right]{hppp.png}
+           \captionof{figure}{\footnotesize Source:Python Simulation}
+          \end{columns}
+   \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{SINR as Quality Metric}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+   \begin{frame}{\textbf {SINR as Quality metric}}
+      %  \frametitle{\textbf{VLC?}}
+           \begin{columns}
+          
+             \column{0.4\textwidth}
+             \begin{itemize}
+              \item Optical signals are highly Incoherent
+              \item Reflections are regarded as interference
+              \item SINR to describe the quality of signal reception
+              \item PPP is Translation Invariant so Rx at different positions is moved to origin
+             \end{itemize}
+          \column{0.5\textwidth}
+           \includegraphics[width=6.5cm,height=6cm,right]{coherent.png}
+           \captionof{figure}{\footnotesize Source:internet}
+          \end{columns}
+   \end{frame}
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \begin{frame}{\textbf {Signal to Interference+Noise Ratio}}
+             \begin{itemize}
+              \item SINR for a specific sender
+              \begin{equation}
+                  SINR_x(n)=\frac{P_x S_x(n)/l(|x|)}{N+I-P_xS_x(n)/l(|x|)}
+              \end{equation}
+              \begin{equation}
+                  I=\sum_{x\in\phi}P_xS_x(n)/l(|x|)
+              \end{equation}
+               \item $|x|$ : distance from each sending end to receiving end
+               \item $P_x$ : Transmitted power
+               \item $S_x$ : Gain of each reflection point
+               \item $N$ : Noise power
+               \item $I$ : Total power received at Rx
+               \item The path loss function 
+               \begin{equation}
+                   l(|x|)=(K|x|)^\beta
+               \end{equation}
+               \item $K>0$ and $4.5>\beta>2$
+               
+              
+             \end{itemize}
+   \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+   \begin{frame}{\textbf {Path Loss Function}}
+          
+             \begin{figure}
+               \includegraphics[width=8.5cm,height=7cm]{pathloss.png}
+               \captionof{figure}{\footnotesize Source:python simulation}
+             \end{figure}
+            
+          
+   \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Channel Model}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+   \begin{frame}{\textbf {Transmission Model}}
+          
+             \begin{figure}
+               \includegraphics[width=5cm,height=2cm]{transmission.jpeg}
+               \captionof{figure}{\footnotesize Source:conference paper[1]}
+             \end{figure}
+             \begin{itemize}
+             \item At the Tx end Photo-current signal $Y(t)$ can be expressed as:
+             \begin{equation}
+                 Y(t)=RX(t)\circledast h(t)+N(t)
+             \end{equation}
+              \item $R$ : Responsivity 
+              \begin{equation}
+                  R=\frac{I_{out}}{P_{in}}
+              \end{equation}
+              \begin{equation}
+                  R=\frac{e\times \eta}{h\times \nu}
+              \end{equation}
+              \item $X(t)$ : light signal emitted by LED
+              \item $h(t)$ : Channel shock effect
+              \item $N(t)$ : AWGN noise
+             \end{itemize}
+          
+   \end{frame}
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Light Source Model}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \begin{frame}{\textbf {Light Source Model}}
+             \begin{itemize}
+              \item Lambertian model is used to simulate the emission of Light source
+              \item Light intensity distribution of an LED can be expressed as:
+              \begin{equation}
+                  I(\theta)=I(0)cos^m(\theta),\theta\in(0,\frac{\pi}{2})
+              \end{equation}
+              \item $\theta$ is the beam exit angle
+              \item $m$ is Lambert coefficient can be expressed as:
+              \begin{equation}
+                  m=-\frac{\ln 2}{\ln cos\theta_{1/2}}
+              \end{equation}
+              \item $\theta_{1/2}$ is the half power angle
+              \item $I(0)$ is the central light intensity and can be expressed as:
+              \begin{equation}
+                  I(0)=\frac{m+1}{2\pi}P_s
+              \end{equation}
+              \item $P_s$ is the Txing power of light source
+             \end{itemize}
+   \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+   \begin{frame}{\textbf {Light Source Model simulation}}
+          
+             \begin{figure}
+              % \includegraphics[width=5cm,height=2cm]
+               %\captionof{figure}{\footnotesize Source:conference paper[1]}
+             \end{figure}
+   \end{frame}
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Impulse Response}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+   \begin{frame}{\textbf {Impulse Response}}
+          
+             \begin{figure}
+               \includegraphics[width=5cm,height=4cm]{impulse.jpg}
+               \captionof{figure}{\footnotesize Source:conference paper[1]}
+             \end{figure}
+             \begin{itemize}
+                \item Channel Impulse response=sum of Impulse responses of single Tx and Rx set.
+                \item Impulse response consisting single LED and Rx is expressed as:
+              \begin{equation}
+                  h(t;S,R)=h^0(t;S,R)+\sum_{k=1}^{\infty}h^k(t;S,R)
+              \end{equation}
+             \end{itemize}
+          
+   \end{frame}
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+   \begin{frame}{\textbf {Impulse Response}}
+             \begin{figure}
+               \includegraphics[width=5cm,height=4cm]{photorx.jpg}
+               \captionof{figure}{\footnotesize Source:conference paper[1]}
+             \end{figure}      
+   
+             \begin{itemize}
+                \item  Impulse response of the direct-view channel:
+                \begin{equation}
+                    h^0(t;S,R)=\frac{m+1}{2\pi}cos^m(\theta)d\Omega rect(\frac{\Psi}{FOV})\delta(t-\frac{d}{c})
+                \end{equation}
+                \item Solid angle of the Rx : 
+                   $ d\Omega=cos\frac{A}{d^2}$
+    
+                \item $\Psi$ : receiving angle
+                \item $d$ : distance between LED and Rx
+                    
+             \end{itemize}
+          
+   \end{frame}
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Received power}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+   \begin{frame}{\textbf {Received power}}
+          
+             \begin{itemize}
+                \item Continuous data connection in all the places in the room
+                \item Improper placing of LEDs and too small FOV of Rx lead to blind spots.
+                \item Received power of LED light source can be expressed as :
+              \begin{equation}
+                  P_r=H(0)P_t
+              \end{equation}
+              \item $P_r$ : Received power
+              \item $P_t$ : Average transmitted power
+             \end{itemize}
+          
+   \end{frame}
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Impact response $(H(0))$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+   \begin{frame}{\textbf {DC channel gain $(H(0))$}}
+          
+             \begin{itemize}
+                \item DC channel gain from impact responce can be obtained as :
+                \begin{equation}
+                    H(0)=\begin{cases}
+                        cos(\Psi)cos^m\Psi T_s(\Psi)g(\Psi) {\frac{A(m+1)}{2\pi d^2}}, & \text{$ 0\leq \Psi \leq \Psi_c $} \\
+                        0, & \text{$\Psi>\Psi_c$}
+                    
+                          \end{cases}
+                \end{equation}
+                \item $T_s(\Psi)$ : optical filter gain
+                \item $g(\Psi)$ : optical concentrator
+              \begin{equation}
+                  g(\Psi)=\begin{cases}
+                           \frac{n^2}{sin^2\Psi_c},& \text{$0\leq\Psi\leq\Psi_c$}\\
+                           0,& \text{$\Psi>\psi_c$}
+                          \end{cases}
+              \end{equation}
+                \item $n$ is refractive index
+             \end{itemize}
+          
+   \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Power fluctuation degree}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+   \begin{frame}{\textbf {Variance of power distribution}}  
+             
+             \begin{equation}
+                    D=\frac{1}{S}\iint_L[P_r(x,y)-\overline{P_r}]^2dxdy=\frac{1}{S}\sum_{i=1}^{N}\iint_L[P_tf(u_i,v_i;x,y)-\overline{P_r}]^2dxdy
+              \end{equation}
+              \begin{itemize}
+                  \item Simulations for power fluctuation is performed for different layouts of LEDs
+                  \item 4-LED are symmetrically distributed
+                  \item Room dimensions:$5m\times 5m\times 3$
+                  \item Rx is placed on a plane at a height h from the floor.
+              \end{itemize}
+              
+                
+    \end{frame}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Simulation Results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+   \begin{frame}{\textbf {Impulse Response}}
+           \begin{columns}
+            \column{0.4\textwidth}
+             \begin{figure}
+               \includegraphics[width=6cm,height=7cm]{sim1.jpg}
+               \captionof{figure}{\footnotesize Source:conference paper[1]}
+             \end{figure}      
+            \column{0.5\textwidth}
+             \begin{figure}
+               \includegraphics[width=6cm,height=7cm]{sim2.jpg}
+               \captionof{figure}{\footnotesize Source:conference paper[1]}
+             \end{figure}  
+          \end{columns}  
+          
+   \end{frame}
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Applications}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+   \begin{frame}{\textbf {Applications}}  
+          
+        \begin{itemize}
+            \item By locating RPs Easedropping can be mitigated to add more security.
+            \item Effective channel modelling results in reducing the effect of Interference which increases the SINR or quality of signal reception.
+        \end{itemize}
+              
+                
+    \end{frame}
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+   \begin{frame}{\textbf {Conclusion}}  
+        The scheme proposed in this paper can be used to obtain the optimal layout of LED lamp in visible light communication system.
+              
+                
+    \end{frame}
+    \begin{frame}%%     2
+          \begin{center}
+             {\fontsize{40}{50}\selectfont Thank You!}
+          \end{center}
+     \end{frame}
+    
+\end{document}
